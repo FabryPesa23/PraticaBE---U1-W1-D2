@@ -7,29 +7,19 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String input = "";
 
-        while (!input.equals(":q")) {
+        while (true) {
             System.out.println("Inserisci una stringa (o ':q' per uscire):");
             input = scanner.nextLine();
 
-            if (!input.equals(":q")) {
-                suddividiStringa(input);
+            // Se l'utente scrive :q, usciamo subito dal ciclo
+            if (input.equals(":q")) {
+                break;
             }
+
+            // Usiamo il trucco veloce per la virgola
+            System.out.println(String.join(",", input.split("")));
         }
 
-        System.out.println("Programma terminato.");
-        scanner.close();
-    }
-
-    public static void suddividiStringa(String s) {
-        int i = 0;
-        while (i < s.length()) {
-            System.out.print(s.charAt(i));
-
-            if (i < s.length() - 1) {
-                System.out.print(",");
-            }
-            i++;
-        }
-        System.out.println();
+        System.out.println("Fine!");
     }
 }
