@@ -10,8 +10,7 @@ public class Main {
         while (true) {
             System.out.println("Inserisci una stringa (o ':q' per uscire):");
             input = scanner.nextLine();
-
-            // Se l'utente scrive :q, usciamo subito dal ciclo
+            
             if (input.equals(":q")) {
                 break;
             }
